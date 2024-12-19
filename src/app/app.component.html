@@ -11,7 +11,7 @@
         <div class="col-sm-10">
           <div class="row" style="padding-top: 50px; text-align: center;">
             <div class="col-sm-2">
-              <a style="color: white; font-size: 20px; text-decoration: none;" routerLink="home">Home |</a>
+              <a style="color: white; font-size: 20px; text-decoration: none;" routerLink="home">Home</a>
             </div>
             <div class="col-sm-2">
               <a style="color: white; font-size: 20px; text-decoration: none;" routerLink="login">Login</a>
@@ -27,10 +27,8 @@
       </div>
     </div>
   </div>
-</div>  
-  
-  
-  <!-- Header close -->
+</div> 
+ <!-- Header close --> 
   
  <!-- body START-->
  <div class="row">
@@ -38,7 +36,7 @@
       <router-outlet></router-outlet>
     </div>
  </div>
-  <!-- body START-->
+  <!-- body end-->
 
   <!-- footer START-->
   <div class="row" style="background-color: rgb(159, 102, 48); color: white; padding: 20px 0; width: 100%;">
@@ -66,8 +64,7 @@
   </div>
    <!-- footer end-->
 
-   <br>
-   <br>
+   
 
 
    
@@ -105,10 +102,16 @@
       <div *ngIf="OperationalFlag" class="d-flex" style="width: 100%;">
         <!-- Left Side: 15% width for buttons -->
         <div class="d-flex flex-column" style="width: 15%; background-color: rgb(54, 217, 154); color: white;">
-          <button class="btn btn-primary p-2 border" routerLink="/oaprofile/adddoc">adddoc</button>
-          <button class="btn btn-primary p-2 border" routerLink="/oaprofile/addresp">addresp</button>
-          <button class="btn btn-primary p-2 border" routerLink="/oaprofile/managedoc">managedoc</button>
-          <button class="btn btn-primary p-2 border" routerLink="/oaprofile/manageresp">manageresp</button>
+          <button class="btn btn-primary p-2 border" routerLink="adddoctor">Add Doctor</button>
+          <button class="btn btn-primary p-2 border" routerLink="addrecepnist">Add Respnist</button>
+          <button class="btn btn-primary p-2 border" routerLink="managedoctor">Manage Doctor</button>
+          <button class="btn btn-primary p-2 border" routerLink="managerecepnist">Manage Respnist</button>
+          <button class="btn btn-primary p-2 border" routerLink="addhelper">Add Helper</button>
+          <button class="btn btn-primary p-2 border" routerLink="addlab">Add Lab</button>
+          <button class="btn btn-primary p-2 border" routerLink="managehelper">Manage Helper </button>
+          <button class="btn btn-primary p-2 border" routerLink="managelab">Manage Lab</button>
+          <button class="btn btn-primary p-2 border" routerLink="oaprofile">Operation Profile</button>
+          
         </div>
   
         <!-- Right Side: 85% width for content -->
@@ -121,8 +124,9 @@
       <div *ngIf="ManagerialFlag" class="d-flex" style="width: 100%;">
         <!-- Left Side: 15% width for buttons -->
         <div class="d-flex flex-column" style="width: 15%; background-color: rgb(54, 217, 154); color: white;">
-          <button class="btn btn-primary p-2 border" routerLink="AddOAdmin">AddOAdmin</button>
-          <button class="btn btn-primary p-2 border" routerLink="ManageOAdmin">ManageOAdmin</button>
+          <button class="btn btn-primary p-2 border" routerLink="addoadmin">Add Operation Admin</button>
+          <button class="btn btn-primary p-2 border" routerLink="manageoadmin">Manage Operation Admin</button>
+          <button class="btn btn-primary p-2 border" routerLink="maprofile">Manager Profile</button>
         </div>
   
         <!-- Right Side: 85% width for content -->

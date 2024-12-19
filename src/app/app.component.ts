@@ -8,25 +8,26 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'HCLSAdmin';
-  AnonymousFlag:boolean=true;
+  AnonymousFlag:boolean=false;
   SecureFlag:boolean=true;
-  ManagerialFlag:boolean=true;
+  ManagerialFlag:boolean=false;
   OperationalFlag:boolean=true;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
-    if (this.ManagerialFlag) {
+  //  if (this.ManagerialFlag) {
      
-      this.router.navigate(['/maprofile']);
-    } 
-    else if (this.OperationalFlag) {
+  //     this.router.navigate(['/maprofile']);
+  //   } 
+  //   else if (this.OperationalFlag) {
 
-      this.router.navigate(['/oaprofile']);
+  //     this.router.navigate(['/oaprofile']);
 
-    } 
-    else {
-      this.router.navigate(['/home']);
-    }
+  //   } 
+  //   else {
+  //     this.router.navigate(['/home']);
+  //   }
   }
 }
+ 
