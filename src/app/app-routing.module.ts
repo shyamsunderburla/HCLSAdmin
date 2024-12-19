@@ -25,8 +25,7 @@ const routes: Routes = [
   {path:"Login", component:LoginComponent},
   {path:"About", component:AboutComponent},
   {path:"Contact", component:ContactComponent},
-  {path:"ActivateAdmin", component:ActivateAdminComponent},
-  {path:"**", component:PageNotFoundComponent} ,  //wild card route
+  {path:"ActivateAdmin", component:ActivateAdminComponent},  
   {path:"MaProfile", component:MAProfileComponent},
   {path:"AddOAdmin", component:AddOAdminComponent},
   {path:"ManageOAdmin", component:ManageOAdminComponent},
@@ -39,6 +38,7 @@ const routes: Routes = [
   {path:"ManageLab", component:ManageLabComponent},
   {path:"Managerecepnist", component:ManageRecepnistComponent},
   {path:"OAProfile", component:OAprofileComponent},
+  {path:"**", component:PageNotFoundComponent} ,  //wild card route
 ];
 
 @NgModule({
