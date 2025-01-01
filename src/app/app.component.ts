@@ -1,33 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { clear } from 'console';
+import { Session } from 'inspector';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent  implements OnInit{
   title = 'HCLSAdmin';
-  AnonymousFlag:boolean=false;
-  SecureFlag:boolean=true;
+  AnonymousFlag:boolean=true;
+  SecureFlag:boolean=false;
   ManagerialFlag:boolean=false;
-  OperationalFlag:boolean=true;
+  OperationalFlag:boolean=false;
 
   constructor(private router: Router) {}
 
-  ngOnInit() {
-  //  if (this.ManagerialFlag) {
-     
-  //     this.router.navigate(['/maprofile']);
-  //   } 
-  //   else if (this.OperationalFlag) {
-
-  //     this.router.navigate(['/oaprofile']);
-
-  //   } 
-  //   else {
-  //     this.router.navigate(['/home']);
-  //   }
+  ngOnInit(): void {
+    if (window.sessionStorage.getItem("AdminLogin") !== null) {
+      this.AnonymousFlag = false;
+      this.SecureFlag = true;
+  
+      const adminTypeId = window.sessionStorage.getItem("AdminTypeId");
+      if (adminTypeId !== null) {
+        if (adminTypeId === '0') {
+          this.ManagerialFlag = true;
+          this.OperationalFlag = false;
+        } else {
+          this.ManagerialFlag = false;
+          this.OperationalFlag = true;
+        }
+      }
+    }
+     else {
+      window.sessionStorage.clear();
+      this.router.navigate(['/login']);
+    }
+   
   }
+  
 }
- 

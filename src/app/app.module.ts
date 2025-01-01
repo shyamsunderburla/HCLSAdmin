@@ -21,6 +21,8 @@ import { AddHelperComponent } from './OperationalAdminDetails/add-helper/add-hel
 import { ManageHelperComponent } from './OperationalAdminDetails/manage-helper/manage-helper.component';
 import { AddLabComponent } from './OperationalAdminDetails/add-lab/add-lab.component';
 import { ManageLabComponent } from './OperationalAdminDetails/manage-lab/manage-lab.component';
+import { AdminServiceService } from './MyServices/admin-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,10 +48,12 @@ import { ManageLabComponent } from './OperationalAdminDetails/manage-lab/manage-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    AdminServiceService
   ],
   bootstrap: [AppComponent]
 })
