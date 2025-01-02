@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-oadmin',
   templateUrl: './manage-oadmin.component.html',
   styleUrl: './manage-oadmin.component.css'
 })
-export class ManageOAdminComponent {
-
+export class ManageOAdminComponent implements OnInit{
+  constructor(private router: Router) {}
+    ngOnInit(): void {  
+      if (window.sessionStorage.getItem("AdminLogin") == null) {
+        this.router.navigate(['login']).then(()=>{
+          window.location.reload();
+        });
+    }
+  }
 }
