@@ -13,8 +13,7 @@ export class LoginComponent implements OnInit {
   password: string = '';
   Admin?:IAdmin;
   
-  constructor(
-              private adminService: AdminServiceService, private router:Router ) {}
+  constructor( private adminService: AdminServiceService, private router:Router ) {}
 
             
   ngOnInit(): void {
@@ -34,7 +33,7 @@ export class LoginComponent implements OnInit {
   }
   
    btn_login(): void {
-    
+    debugger;
     this.adminService.checkAdminLogin(this.email,this.password).subscribe( data =>{
     this.Admin = data;
 
@@ -48,20 +47,20 @@ export class LoginComponent implements OnInit {
        // alert("Login success");
         // console.log(this.Admin);
         //this.Admin.ActiveStatus=true;
-        if (!this.Admin.ActiveStatus) {
+        if (!this.Admin.activeStatus) {
           this.router.navigate(["activateadmin"]).then(()=>{
             window.location.reload();
           });
         }
         else{
-          window.sessionStorage.setItem("AdminLogin",this.Admin.Email.toString());
-          window.sessionStorage.setItem("AdminTypeId",this.Admin.AdminTypeId.toString());
-          if(this.Admin.AdminTypeId===0){
+          window.sessionStorage.setItem("AdminLogin",this.Admin.email.toString());
+          window.sessionStorage.setItem("AdminTypeId",this.Admin.adminTypeId.toString());
+          if(this.Admin.adminTypeId===0){
             this.router.navigate(["maprofile"]).then(()=>{
               window.location.reload();
             });
           }
-          else if(this.Admin.AdminTypeId===1){
+          else if(this.Admin.adminTypeId===1){
             this.router.navigate(["oaprofile"]).then(()=>{
               window.location.reload();
             });

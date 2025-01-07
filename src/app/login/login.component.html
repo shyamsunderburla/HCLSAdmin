@@ -20,6 +20,7 @@
                             <div class="col-sm-6"> 
                                 <INPUT type="email"
                                  id="email" 
+                                 [(ngModel)]="email"
                                  placeholder="please enter Email...!" 
                                  class="form-control">
                                 
@@ -32,6 +33,7 @@
                             <div class="col-sm-6"> 
                                 <INPUT type="password" 
                                 id="password" 
+                                [(ngModel)]="password"
                                 placeholder="please enter password...!"
                                  class="form-control">
                                 
@@ -47,13 +49,15 @@
                         </div>
                         <div class="row" style="margin-top: 10px; margin-bottom: 40px; text-align: center;">
                             <div class="col-sm-12">
-                                <a routerLink="forgot-password" class="text-decoration">forgot-password ?</a>
+                                <a routerLink="/forgetpassword" class="text-decoration-none">forgot-password ?</a>
                             </div>
                            
                         </div>
                     </div>
                 </div>
-               </div>
+                <div>
+                    <router-outlet></router-outlet> 
+                  </div>
             </div>
          </div>
           <!-- body end-->

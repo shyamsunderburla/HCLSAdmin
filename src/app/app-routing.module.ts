@@ -18,6 +18,7 @@ import { ManageHelperComponent } from './OperationalAdminDetails/manage-helper/m
 import { ManageLabComponent } from './OperationalAdminDetails/manage-lab/manage-lab.component';
 import { ManageRecepnistComponent } from './OperationalAdminDetails/manage-recepnist/manage-recepnist.component';
 import { OAprofileComponent } from './OperationalAdminDetails/oaprofile/oaprofile.component';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"home",pathMatch:'full'},  //DEFAULT ROUTE
@@ -38,6 +39,7 @@ const routes: Routes = [
   {path:"managelab", component:ManageLabComponent},
   {path:"managerecepnist", component:ManageRecepnistComponent},
   {path:"oaprofile", component:OAprofileComponent},
+  {path:"forgetpassword", component:ForgetpasswordComponent},
   {path:"**", component:PageNotFoundComponent} ,  //wild card route
 ];
 

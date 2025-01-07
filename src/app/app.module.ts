@@ -23,6 +23,8 @@ import { AddLabComponent } from './OperationalAdminDetails/add-lab/add-lab.compo
 import { ManageLabComponent } from './OperationalAdminDetails/manage-lab/manage-lab.component';
 import { AdminServiceService } from './MyServices/admin-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import {FormsModule}from '@angular/forms';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 
 @NgModule({
   declarations: [
@@ -44,13 +46,14 @@ import { HttpClientModule } from '@angular/common/http';
     AddHelperComponent,
     ManageHelperComponent,
     AddLabComponent,
-    ManageLabComponent
+    ManageLabComponent,
+    ForgetpasswordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-   
+    FormsModule
   ],
   providers: [
     provideClientHydration(),
